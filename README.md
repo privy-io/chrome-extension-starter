@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+# Chrome Extension Starter (CRA + Privy)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Chrome extension built using the Create React App starter, with Privy authentication and access to Privy features. Please follow the official guide to understand and extend the integration: [Privy Chrome Extension recipe](https://docs.privy.io/recipes/react/chrome-extension).
 
-## Available Scripts
+There is an `options.html` which opens as a browser page, and a separate login auth popup useful for social auth flows.
 
-In the project directory, you can run:
+## Prerequisites
 
-### `npm start`
+- Privy App ID available as env var `REACT_APP_PRIVY_APP_ID`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Setup
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Install deps
 
-### `npm test`
+```bash
+pnpm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Set env (create `.env` in project root):
 
-### `npm run build`
+```bash
+REACT_APP_PRIVY_APP_ID=your_app_id_here
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Build
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+pnpm build
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Load in Chrome
 
-### `npm run eject`
+- Open chrome://extensions
+- Enable Developer mode
+- Load unpacked → select `my-extension/build`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Development
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run CRA dev server if you want to iterate on UI quickly:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+pnpm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Note: For actual extension testing, use `pnpm build` then reload the unpacked extension.

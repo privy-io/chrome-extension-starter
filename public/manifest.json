@@ -1,25 +1,23 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
+  "manifest_version": 3,
+  "name": "My Extension with Privy",
+  "version": "1.0",
+  "description": "Chrome extension with Privy authentication",
+  "permissions": ["identity", "storage"],
+  "host_permissions": ["https://auth.privy.io/*"],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "My Extension"
+  },
+  "options_page": "options.html",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; frame-ancestors 'none';"
+  },
+
+  "web_accessible_resources": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "resources": ["static/js/*.js", "static/css/*.css"],
+      "matches": ["<all_urls>"]
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }
