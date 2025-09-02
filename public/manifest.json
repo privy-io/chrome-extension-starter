@@ -3,7 +3,7 @@
   "name": "My Extension with Privy",
   "version": "1.0",
   "description": "Chrome extension with Privy authentication",
-  "permissions": ["identity", "storage"],
+  "permissions": ["identity"],
   "host_permissions": ["https://auth.privy.io/*"],
   "action": {
     "default_popup": "index.html",
@@ -12,12 +12,5 @@
   "options_page": "options.html",
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'; frame-ancestors 'none';"
-  },
-
-  "web_accessible_resources": [
-    {
-      "resources": ["static/js/*.js", "static/css/*.css"],
-      "matches": ["<all_urls>"]
-    }
-  ]
+  }
 }
