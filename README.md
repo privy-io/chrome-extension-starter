@@ -1,5 +1,7 @@
 # Chrome Extension Starter (CRA + Privy)
 
+> **This repository is archived.** For up-to-date examples, please visit [github.com/privy-io/examples](https://github.com/privy-io/examples).
+
 This is a Chrome extension built using the Create React App starter, with Privy authentication and access to Privy features. Please follow the official guide to understand and extend the integration: [Privy Chrome Extension recipe](https://docs.privy.io/recipes/react/chrome-extension).
 
 There is an `options.html` which opens as a browser page, and a separate login auth popup useful for social auth flows.
